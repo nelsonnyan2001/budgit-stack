@@ -13,7 +13,12 @@
     },
     "categories": {
       "auth": {
-        "budgitd1097fc6": {}
+        "budgit40f346b5": {
+          "userPoolId": "us-east-1_LEsHJgw6h",
+          "userPoolName": "budgit-dev-pool",
+          "webClientId": "4ca9mmt1e6v2vjfe8qk2ht04d7",
+          "nativeClientId": "4ca9mmt1e6v2vjfe8qk2ht04d7"
+        }
       }
     }
   }

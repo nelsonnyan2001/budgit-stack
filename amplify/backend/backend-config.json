@@ -1,28 +1,45 @@
 {
   "auth": {
-    "budgitd1097fc6": {
+    "budgit40f346b5": {
       "customAuth": false,
       "dependsOn": [],
-      "frontendAuthConfig": {
-        "mfaConfiguration": "OFF",
-        "mfaTypes": [
-          "SMS"
-        ],
-        "passwordProtectionSettings": {
-          "passwordPolicyCharacters": [],
-          "passwordPolicyMinLength": 8
-        },
-        "signupAttributes": [
-          "EMAIL"
-        ],
-        "socialProviders": [],
-        "usernameAttributes": [],
-        "verificationMechanisms": [
-          "EMAIL"
-        ]
-      },
       "providerPlugin": "awscloudformation",
-      "service": "Cognito"
+      "service": "Cognito",
+      "serviceType": "imported"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_auth_budgit40f346b5_nativeClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "budgit40f346b5"
+        }
+      ]
+    },
+    "AMPLIFY_auth_budgit40f346b5_userPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "budgit40f346b5"
+        }
+      ]
+    },
+    "AMPLIFY_auth_budgit40f346b5_userPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "budgit40f346b5"
+        }
+      ]
+    },
+    "AMPLIFY_auth_budgit40f346b5_webClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "budgit40f346b5"
+        }
+      ]
     }
   }
 }

@@ -1,0 +1,26 @@
+{
+  "authSelections": "userPoolOnly",
+  "resourceName": "budgit40f346b5",
+  "serviceType": "imported",
+  "region": "us-east-1",
+  "aliasAttributes": [
+    "email",
+    "preferred_username"
+  ],
+  "requiredAttributes": [
+    "email"
+  ],
+  "passwordPolicyMinLength": 8,
+  "passwordPolicyCharacters": [
+    "Requires Lowercase",
+    "Requires Uppercase"
+  ],
+  "mfaConfiguration": "OPTIONAL",
+  "autoVerifiedAttributes": [
+    "email"
+  ],
+  "mfaTypes": [
+    "SMS Text Message",
+    "TOTP"
+  ]
+}
