@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-budgit-dev-230246-authRole",
+      "UnauthRoleArn": "arn:aws:iam::482719618327:role/amplify-budgit-dev-230246-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::482719618327:role/amplify-budgit-dev-230246-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-budgit-dev-230246-deployment",
+      "UnauthRoleName": "amplify-budgit-dev-230246-unauthRole",
+      "StackName": "amplify-budgit-dev-230246",
+      "StackId": "arn:aws:cloudformation:us-east-1:482719618327:stack/amplify-budgit-dev-230246/79090ea0-6669-11ee-ab1d-0ab567032355",
+      "AmplifyAppId": "d39i37o0b8ud9r"
+    },
+    "categories": {
+      "auth": {
+        "budgitd1097fc6": {}
+      }
+    }
+  }
+}

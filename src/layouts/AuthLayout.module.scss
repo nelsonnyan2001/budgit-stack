@@ -1,0 +1,43 @@
+.page {
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .pageBG {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #dfdbe5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.38' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    z-index: -100;
+  }
+  
+  .logoHolder {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 6px 12px;
+    background: white;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  
+  .logo {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+  }
+  
+  .logoText {
+    font-size: 20px;
+    font-weight: 400;
+  }
