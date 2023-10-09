@@ -1,7 +1,7 @@
 import styles from "./Login.module.scss";
 import Separator from "../../components/Separator/Separator";
 import { useNavigate } from "react-router-dom";
-import { signIn, storeUser } from "../../utils/auth";
+import { signIn } from "../../utils/auth";
 import { FormEvent, useState } from "react";
 import { handleAmplifyErr } from "../../utils/amplify";
 import { IconExclamationCircle } from "@tabler/icons-react";
@@ -31,9 +31,7 @@ const Login: React.FC = () => {
       username: username,
       password: password,
     })
-      .then((user) => {
-        console.log(user)
-        storeUser(user);
+      .then(() => {
         navigate("/");
       })
       .catch((error) => {

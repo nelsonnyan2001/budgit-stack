@@ -4,6 +4,9 @@ import "@fontsource/dm-serif-display/400.css";
 import "@fontsource-variable/dm-sans";
 import "./index.css";
 import "./colors.css";
+import "@mantine/core/styles.css";
+
+import { MantineProvider } from "@mantine/core";
 
 // Amplify
 
@@ -19,8 +22,10 @@ Amplify.configure(awsconfig);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <HashRouter>
-      <RoutingComponent />
-    </HashRouter>
+    <MantineProvider>
+      <HashRouter>
+        <RoutingComponent />
+      </HashRouter>
+    </MantineProvider>
   </React.StrictMode>
 );

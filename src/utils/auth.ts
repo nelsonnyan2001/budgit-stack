@@ -22,6 +22,7 @@ export const signUp = async ({ email, username, password }: SignUpParams) => {
     password,
     attributes: {
       email,
+      "custom:onboardStatus" : "not started"
     },
   });
   return user;
@@ -39,14 +40,13 @@ export const signIn = async ({ username, password }: SignInParams) => {
   return user;
 };
 
-export const storeUser = (user: any) => {
-  localStorage.setItem("currentUser", JSON.stringify(user));
+export const getUser = async () => {
+  const user = await Auth.currentAuthenticatedUser();
+  return user;
 };
 
-export const getUser = (): any | undefined => {
-  const user = localStorage.getItem("currentUser");
-  if (!user) {
-    return;
-  }
-  return JSON.parse(user);
+export const signOut = async () => {
+  Auth.signOut().then(() => {
+    window.location.reload();
+  });
 };
