@@ -1,34 +1,26 @@
-import { getUser } from "./utils/auth";
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "./utils/hooks";
+import { fetchUserAttributes } from "aws-amplify/auth";
 
 function App() {
-  const [user, setUser] = useState<any>(null);
-
+  const user = useUser();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    getUser()
-      .then((cognitoUser) => setUser(cognitoUser))
-      .catch(() => {
-        navigate("/login");
-      });
-  }, [navigate]);
-
   if (!user) {
-    return;
+    return <></>;
   }
 
-  console.log(user.attributes["custom:onboardStatus"]);
+  fetchUserAttributes().then((data) => {
+    switch (data["custom:onboardStatus"]) {
+      case "not started":
+        navigate("/setup");
+        break;
+      case "finished":
+        navigate("/retirement");
+    }
+  });
 
-  switch (user.attributes["custom:onboardStatus"]) {
-    case "not started":
-      navigate("/onboarding");
-      break;
-    case "finished":
-      return <div>Onboarded</div>;
-  }
-  return <div></div>;
+  return <></>;
 }
 
 export default App;

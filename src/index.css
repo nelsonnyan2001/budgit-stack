@@ -1,5 +1,4 @@
 * {
-  font-family: var(--body-font), system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -9,8 +8,6 @@
 }
 
 :root {
-  --title-font: DM Serif Display;
-  --body-font: DM Sans Variable;
   color: var(--purple-dark);
 }
 

@@ -1,14 +1,11 @@
-.onboarding {
-  background-color: black;
-  height: 100%;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.card {
+  border: solid 2px rgb(217, 217, 217);
 }
 
-.onboardingEl {
-  padding: 20px 40px;
-  width: 200px;
-  height: 200px;
+.card[data-active="true"] {
+  border-color: rgb(0, 255, 0);
+}
+
+.icon {
+  margin-left: 6px;
 }

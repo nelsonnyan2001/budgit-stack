@@ -1,9 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "@fontsource/dm-serif-display/400.css";
 import "@fontsource-variable/dm-sans";
 import "./index.css";
-import "./colors.css";
 import "@mantine/core/styles.css";
 
 import { MantineProvider } from "@mantine/core";
@@ -22,7 +20,11 @@ Amplify.configure(awsconfig);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <MantineProvider>
+    <MantineProvider
+      theme={{
+        fontFamily: "DM Sans Variable",
+      }}
+    >
       <HashRouter>
         <RoutingComponent />
       </HashRouter>
