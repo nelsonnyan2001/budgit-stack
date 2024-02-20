@@ -11,9 +11,11 @@ const Error: React.FC<ErrorProps> = ({ label }) => {
         color="red"
         style={{ flexShrink: 0 }}
       ></IconExclamationCircle>
-      <Text c="red" fz={"sm"} style={{ whiteSpace: "pre-wrap" }}>
-        {label}
-      </Text>
+      <div>
+        <Text c="red" fz={"sm"} style={{ whiteSpace: "pre-wrap" }}>
+          {label}
+        </Text>
+      </div>
     </Group>
   );
 };

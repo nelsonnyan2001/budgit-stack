@@ -6,7 +6,7 @@ const ConfirmSignUp: React.FC = () => {
   return (
     <Stack p={"xl"}>
       <Title fz="xl">Confirmation Email Sent</Title>
-      <Text>Please check your inbox for a confirmation code.</Text>
+      <Text>Please check your inbox for a verification link.</Text>
       <Button onClick={() => navigate("/")}>Return to Login</Button>
     </Stack>
   );

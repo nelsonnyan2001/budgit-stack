@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import {
   IconBrandGoogleFilled,
@@ -68,7 +68,16 @@ const Login: React.FC = () => {
           <Input.Wrapper label="Password">
             <TextInput type="password" {...register("password")} required />
           </Input.Wrapper>
-          {error && <Error label={error} />}
+          {error && (
+            <>
+              <Error label={error} />
+              <Link to="/forgot-password">
+                <Text c="dimmed" size="sm">
+                  Forgot your password?
+                </Text>
+              </Link>
+            </>
+          )}
           <Button type="submit">Submit</Button>
         </Stack>
       </form>

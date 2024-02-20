@@ -12,6 +12,7 @@ import OnboardingLayout from "./layouts/OnboardingLayout/OnboardingLayout";
 import Setup from "./pages/Setup/Setup";
 import AuthedLayout from "./layouts/AuthedLayout/AuthedLayout";
 import ConfirmSignUp from "./pages/ConfirmSignUp/ConfirmSignUp";
+import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 
 const RoutingComponent: React.FC = () => (
   <Routes>
@@ -19,6 +20,7 @@ const RoutingComponent: React.FC = () => (
     <Route element={<AuthLayout />}>
       <Route path="/login" element={<Login />} />
       <Route path="/sign-up" element={<SignUp />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/confirm-sign-up/:userId" element={<ConfirmSignUp />} />
     </Route>
     <Route element={<AuthedLayout />}>

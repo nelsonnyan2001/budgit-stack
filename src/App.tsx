@@ -1,25 +1,28 @@
 import { useNavigate } from "react-router-dom";
-import { useUser } from "./utils/hooks";
-import { fetchUserAttributes } from "aws-amplify/auth";
+import { fetchUserAttributes, getCurrentUser } from "aws-amplify/auth";
+import { useEffect } from "react";
+import { getOnboardStatus } from "./utils/helpers";
 
 function App() {
-  const user = useUser();
   const navigate = useNavigate();
-
-  if (!user) {
-    return <></>;
-  }
-
-  fetchUserAttributes().then((data) => {
-    switch (data["custom:onboardStatus"]) {
-      case "not started":
-        navigate("/setup");
-        break;
-      case "finished":
-        navigate("/retirement");
-    }
-  });
-
+  useEffect(() => {
+    getCurrentUser()
+      .then(() => {
+        fetchUserAttributes().then((userAttributes) => {
+          switch (getOnboardStatus(userAttributes)) {
+            case "not started":
+              navigate("/onboarding");
+              break;
+            default:
+              navigate("/expenses");
+              break;
+          }
+        });
+      })
+      .catch(() => {
+        navigate("/login");
+      });
+  }, [navigate]);
   return <></>;
 }
 
