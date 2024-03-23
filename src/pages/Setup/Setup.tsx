@@ -9,7 +9,7 @@ const Setup: React.FC = () => {
 
   const onSubmit = (values: FieldValues) => {
     updateUserAttributes({ userAttributes: values });
-    navigate("/onboarding")
+    navigate("/onboarding");
   };
 
   return (

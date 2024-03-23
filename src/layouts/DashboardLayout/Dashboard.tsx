@@ -47,7 +47,7 @@ const Dashboard: React.FC = () => {
           <Sidebar collapse={toggle} />
         </AppShell.Navbar>
       </Collapse>
-      <AppShell.Main>
+      <AppShell.Main className={styles.mainBg}>
         <Outlet />
       </AppShell.Main>
     </AppShell>

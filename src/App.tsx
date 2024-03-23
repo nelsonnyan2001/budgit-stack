@@ -11,7 +11,7 @@ function App() {
         fetchUserAttributes().then((userAttributes) => {
           switch (getOnboardStatus(userAttributes)) {
             case "not started":
-              navigate("/onboarding");
+              navigate("/setup");
               break;
             default:
               navigate("/expenses");

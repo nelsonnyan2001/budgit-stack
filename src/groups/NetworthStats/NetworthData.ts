@@ -18,6 +18,7 @@ export type NetworthDataProps = {
   icon: (props: TablerIconsProps) => JSX.Element;
   amount: string;
   trend: Trend;
+  logoColor: string;
 };
 
 const NetworthDisplayItems: NetworthDataProps[] = [
@@ -25,6 +26,7 @@ const NetworthDisplayItems: NetworthDataProps[] = [
     title: "Net Worth",
     icon: IconTarget,
     amount: "74800.02",
+    logoColor: "red",
     trend: {
       historically: "higher",
       type: "positive",
@@ -36,6 +38,7 @@ const NetworthDisplayItems: NetworthDataProps[] = [
     title: "Saved This Month",
     icon: IconSeeding,
     amount: "2141.15",
+    logoColor: "teal",
     trend: {
       historically: "lower",
       type: "negative",
@@ -47,6 +50,7 @@ const NetworthDisplayItems: NetworthDataProps[] = [
     title: "Saved Year To Date",
     icon: IconPigMoney,
     amount: "4856.23",
+    logoColor: "orange",
     trend: {
       historically: "higher",
       type: "positive",
@@ -58,6 +62,7 @@ const NetworthDisplayItems: NetworthDataProps[] = [
     title: "Debt",
     icon: IconCreditCardPay,
     amount: "3220.01",
+    logoColor: "pink",
     trend: {
       historically: "lower",
       type: "positive",

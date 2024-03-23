@@ -29,5 +29,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <RoutingComponent />
       </HashRouter>
     </MantineProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

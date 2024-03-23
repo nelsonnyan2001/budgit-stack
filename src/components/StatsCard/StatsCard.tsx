@@ -18,17 +18,18 @@ const StatsCard: React.FC<NetworthDataProps> = ({
   title,
   icon,
   amount,
+  logoColor,
   trend,
 }) => {
   const Logo = icon;
   return (
-    <Paper withBorder p="md" radius="md" key={title}>
+    <Paper p="md" radius="md" key={title}>
       <Stack gap={"xs"}>
         <Group justify="space-between">
           <Text size="sm" c="">
             {title}
           </Text>
-          <Logo color="grey"></Logo>
+          <Logo color={logoColor}></Logo>
         </Group>
         <Flex pt={"md"} gap={"md"} direction={{ base: "column", xl: "row" }}>
           <Text size="xl" fw={"bold"}>

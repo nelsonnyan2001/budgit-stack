@@ -10,7 +10,7 @@ const Error: React.FC<ErrorProps> = ({ label }) => {
         stroke={1.5}
         color="red"
         style={{ flexShrink: 0 }}
-      ></IconExclamationCircle>
+      />
       <div>
         <Text c="red" fz={"sm"} style={{ whiteSpace: "pre-wrap" }}>
           {label}

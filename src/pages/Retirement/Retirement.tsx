@@ -1,15 +1,12 @@
-import AssetLocation from "@/components/AssetAllocation/AssetAllocation";
-import NetworthStats from "@/groups/NetworthStats/NetworthStats";
-import { Flex, Stack } from "@mantine/core";
+import { AssetSplit } from "@/groups/AssetSplit/AssetSplit";
+import { NetworthStats } from "@/groups/NetworthStats/NetworthStats";
+import { Stack } from "@mantine/core";
 
 const Retirement: React.FC = () => {
   return (
-    <Stack>
+    <Stack gap="0px">
       <NetworthStats />
-      <Flex direction={{ base: "column", md: "row" }} gap={"md"}>
-        <AssetLocation />
-        <AssetLocation />
-      </Flex>
+      <AssetSplit />
     </Stack>
   );
 };

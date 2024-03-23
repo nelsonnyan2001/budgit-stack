@@ -24,9 +24,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapse }) => {
         <Divider />
       </Stack>
       <Stack>
-        <Button onClick={() => collapse()}>
-          Collapse Sidebar
-        </Button>
+        <Button onClick={() => collapse()}>Collapse Sidebar</Button>
         <Button variant="default" onClick={() => handleSignOut()}>
           Sign Out
         </Button>
