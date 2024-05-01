@@ -1,17 +1,21 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import { AppShell, Center, Paper } from "@mantine/core";
 import { getCurrentUser } from "aws-amplify/auth";
+import { useEffect } from "react";
 
 const AuthLayout: React.FC = () => {
   const navigate = useNavigate();
-  getCurrentUser()
-    .then(() => {
-      navigate("/expenses");
-    })
-    .catch(() => {
-      // Suppressing console error
-      // There's probably a cleaner way to do this but oh well
-    });
+
+  useEffect(() => {
+    getCurrentUser()
+      .then(() => {
+        navigate("/expenses");
+      })
+      .catch(() => {
+        // Suppressing console error
+        // There's probably a cleaner way to do this but oh well
+      });
+  }, []);
 
   return (
     <AppShell>

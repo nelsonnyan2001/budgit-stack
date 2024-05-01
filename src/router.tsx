@@ -21,7 +21,7 @@ const RoutingComponent: React.FC = () => (
       <Route path="/login" element={<Login />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
-      <Route path="/confirm-sign-up/:userId" element={<ConfirmSignUp />} />
+      <Route path="/confirm-sign-up" element={<ConfirmSignUp />} />
     </Route>
     <Route element={<AuthedLayout />}>
       <Route element={<OnboardingLayout />}>

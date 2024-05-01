@@ -26,11 +26,17 @@ const Login: React.FC = () => {
 
   const onFormSubmit = ({ username, password }: FieldValues) => {
     signIn({ username, password })
-      .then(() => {
-        navigate("/");
+      .then(({ isSignedIn, nextStep }) => {
+        if (!isSignedIn) {
+          if (nextStep.signInStep === "CONFIRM_SIGN_UP") {
+            setError("Please check your email to verify your account.");
+          }
+        } else {
+          navigate("/");
+        }
       })
       .catch((error) => {
-        setError(error.message);
+        setError(error?.message || "An unknown error occured.");
       });
   };
 

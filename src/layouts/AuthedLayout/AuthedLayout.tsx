@@ -1,6 +1,7 @@
 import {
   FetchUserAttributesOutput,
   fetchUserAttributes,
+  signOut,
 } from "aws-amplify/auth";
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
@@ -17,6 +18,7 @@ const AuthedLayout: React.FC = () => {
         setLoading(false);
       })
       .catch(() => {
+        signOut();
         navigate("/login");
       });
   }, [navigate]);

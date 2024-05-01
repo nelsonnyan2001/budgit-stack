@@ -11,7 +11,8 @@ import {
   Title,
 } from "@mantine/core";
 import Error from "../../components/Error/Error";
-import { signUp } from "aws-amplify/auth";
+import { signUp as cognitoSignUp } from "aws-amplify/auth";
+import { serverSignUp } from "./utils";
 
 const SignUp: React.FC = () => {
   const navigate = useNavigate();
@@ -29,7 +30,8 @@ const SignUp: React.FC = () => {
       setError("Your passwords do not match!");
       return;
     }
-    signUp({
+
+    cognitoSignUp({
       username,
       password,
       options: {
@@ -40,7 +42,21 @@ const SignUp: React.FC = () => {
       },
     })
       .then(({ userId }) => {
-        navigate(`/confirm-sign-up/${userId}`);
+        if (!userId) {
+          console.error("No userId returned from Cognito");
+          return;
+        }
+        serverSignUp({
+          email,
+          username,
+          userId,
+        })
+          .then(() => {
+            navigate("/confirm-sign-up/");
+          })
+          .catch((err) => {
+            setError(err);
+          });
       })
       .catch((error) => {
         setError(error.message);
